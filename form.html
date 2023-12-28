@@ -1,0 +1,105 @@
+<html>   
+   <head>
+      <title>Form Validation</title>   
+      <style>
+        body
+        {
+            background: #ffffff;
+        }
+        table
+        {
+            background-color: rgb(73, 73, 73);
+        }
+        td{
+            background-color: rgb(245, 186, 235);
+        }
+
+      </style>   
+            <script type = "text/javascript">
+        <!--
+           // Form validation code will come here.
+           function validate() {
+           
+              if( document.myForm.Name.value == "" ) {
+                 alert( "Please provide your name!" );
+                 document.myForm.Name.focus() ;
+                 return false;
+              }
+              if( document.myForm.EMail.value == "" ) {
+                 alert( "Please provide your Email!" );
+                 document.myForm.EMail.focus() ;
+                 return false;
+              }
+              if( document.myForm.Course.value == "-1" ) {
+                 alert( "Please provide your course!" );
+                 return false;
+              }
+              if( document.myForm.Country.value == "-1" ) {
+                 alert( "Please provide your country!" );
+                 return false;
+              }
+              return( true );
+           }
+        //-->
+     </script>       
+   </head>
+   
+   <body>
+      <form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "4" cellpadding = "4" border = "4" align="center" width="100%">
+            
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">EMail</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            <tr>
+                <td align = "right">Course</td>
+                <td>
+                    <select name = "course">
+                        <option value = "-1" selected>[choose yours]</option>
+                        <option value = "1">CSE</option>
+                        <option value = "2">MECH</option>
+                        <option value = "3">EC</option>
+                        <option value = "3">AIML</option>
+                        <option value = "3">ML</option>
+                        <option value = "3">ROBOTICS</option>
+                     </select>
+                    
+                </td>
+            </tr>
+            <tr>
+               <td align = "right">Country</td>
+               <td>
+                  <select name = "Country">
+                     <option value = "-1" selected>[choose yours]</option>
+                     <option value = "1">USA</option>
+                     <option value = "2">UK</option>
+                     <option value = "3">INDIA</option>
+                     <option value = "3">GERMANY</option>
+                     <option value = "3">SPAIN</option>
+                     <option value = "3">AFRICA</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+                <td align = "right">Currently
+                    <td>
+                    <input type = "checkbox" value = "student" checked/> Student
+                    </td>
+                </td>
+            </tr>
+            
+            <tr>
+               <td align = "right"></td>
+               <td><input type = "submit" value = "Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>     
+   </body>
+</html>
